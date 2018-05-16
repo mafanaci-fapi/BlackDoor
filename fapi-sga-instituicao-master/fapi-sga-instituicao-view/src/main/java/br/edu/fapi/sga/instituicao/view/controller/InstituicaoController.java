@@ -21,58 +21,61 @@ public class InstituicaoController {
 		System.out.println("Opcao:");
 		int opcao = scanner.nextInt();
 
-		// switch (opcao) {
-		// case 1:
-		// cadastrarInstituicao();
-		// break;
-		//
-		// case 2:
-		// atualizarInstituicao();
-		// break;
-		//
-		// case 3:
-		// listarInstituicao();
-		// break;
-		//
-		// case 4:
-		// pesquisarInstituicao();
-		// break;
-		// case 5:
-		// excluirInstituicao();
-		// default:
-		//
-		// System.out.println("Opção inválida");
-		// InstituicaoMenu();
-		//
+		switch (opcao) {
+			case 1:
+				cadastrarInstituicao();
+				break;
 
-		if (opcao == 1) {
-			cadastrarInstituicao();
-		} else {
-			if (opcao == 2) {
+			case 2:
 				atualizarInstituicao();
+				break;
 
-			} else {
-				if (opcao == 3) {
-					listarInstituicao();
+			case 3:
+				listarInstituicao();
+				break;
 
-				} else {
-					if (opcao == 4) {
-						pesquisarInstituicao();
+			case 4:
+				pesquisarInstituicao();
+				break;
+			case 5:
+				excluirInstituicao();
+			default:
 
-					} else {
-						if (opcao == 5) {
-							excluirInstituicao();
+				System.out.println("Opção inválida");
+				InstituicaoMenu();
 
-						} else {
-							System.out.println("Opção inválida");
-							InstituicaoMenu();
-						}
-					}
-				}
-			}
 		}
-		return null;
-	}
+				return null;
+		}
+
+//		if (opcao == 1) {
+//			cadastrarInstituicao();
+//		} else {
+//			if (opcao == 2) {
+//				atualizarInstituicao();
+//
+//			} else {
+//				if (opcao == 3) {
+//					listarInstituicao();
+//
+//				} else {
+//					if (opcao == 4) {
+//						pesquisarInstituicao();
+//
+//					} else {
+//						if (opcao == 5) {
+//							excluirInstituicao();
+//
+//						} else {
+//							System.out.println("Opção inválida");
+//							InstituicaoMenu();
+//						}
+//					}
+//				}
+//			}
+//		}
+//		return null;
+//	}
 
 	public String cadastrarInstituicao() {
 
@@ -89,6 +92,7 @@ public class InstituicaoController {
 		instituicao.setEndereco(scanner.nextLine());
 		System.out.println("Socio(s):");
 		instituicao.setSocios(scanner.nextLine());
+		System.out.println("");
 
 		System.out.println("Operação realizada com sucesso");
 		InstituicaoMenu();
@@ -142,24 +146,39 @@ public class InstituicaoController {
 			System.out.println("(1)Sim / (2)Não");
 			int opcao = scanner.nextInt();
 
-			if (opcao == 1) {
-				System.out.println("Excluido com sucesso");
-				InstituicaoMenu();
+			switch (opcao) {
+
+				case 1:
+					System.out.println("Excluido com sucesso");
+					InstituicaoMenu();
+					break;
+				case 2:
+					InstituicaoMenu();
+					break;
+				default:
+						System.out.println("Opção inválida");
+						excluirInstituicao();
+					}
 			}
-			if (opcao == 2) {
-				InstituicaoMenu();
-			}
-			if (opcao != 1 && opcao != 2) {
-				System.out.println("Opção inválida");
-				excluirInstituicao();
-			}
-		} else {
-			System.out.println("Nome inválido");
-			excluirInstituicao();
+//			if (opcao == 1) {
+//				System.out.println("Excluido com sucesso");
+//				InstituicaoMenu();
+//			}
+//			if (opcao == 2) {
+//				InstituicaoMenu();
+//			}
+//			if (opcao != 1 && opcao != 2) {
+//				System.out.println("Opção inválida");
+//				excluirInstituicao();
+//			}
+//		} else {
+//			System.out.println("Nome inválido");
+//			excluirInstituicao();
+//		}
+			InstituicaoMenu();
+			return null;
 		}
-		InstituicaoMenu();
-		return null;
-	}
+
 
 	public String pesquisarInstituicao() {
 
@@ -171,6 +190,7 @@ public class InstituicaoController {
 
 		if (Nome == instituicao.getNomeFantasia()) {
 			System.out.println("Nome: " + instituicao.getNomeFantasia());
+			InstituicaoMenu();
 		} else {
 			System.out.println("Não existe dados para essa instituição ");
 			pesquisarInstituicao();
