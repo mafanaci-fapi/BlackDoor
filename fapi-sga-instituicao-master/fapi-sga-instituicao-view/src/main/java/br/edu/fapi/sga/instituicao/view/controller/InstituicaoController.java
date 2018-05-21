@@ -39,9 +39,11 @@ public class InstituicaoController {
 				break;
 			case 5:
 				excluirInstituicao();
+				break;
 			default:
 
 				System.out.println("Opção inválida");
+				System.out.println("");
 				InstituicaoMenu();
 
 		}
@@ -95,6 +97,7 @@ public class InstituicaoController {
 		System.out.println("");
 
 		System.out.println("Operação realizada com sucesso");
+		System.out.println("");
 		InstituicaoMenu();
 		return null;
 	}
@@ -123,11 +126,15 @@ public class InstituicaoController {
 			instituicao.setSocios(scanner.nextLine());
 
 			System.out.println("Operação realizada com sucesso");
+			System.out.println("");
 			InstituicaoMenu();
 			return null;
 
 		} else {
-			System.out.println("Instituição inválida");
+			System.out.println("");
+			System.err.print("Instituição inválida");
+			System.out.println("");
+			InstituicaoMenu();
 			return atualizarInstituicao();
 		}
 
@@ -136,6 +143,10 @@ public class InstituicaoController {
 	public String excluirInstituicao() {
 
 		Instituicao instituicao = new Instituicao();
+
+		//COLOCAR PARA LISTAR AS INSTITUIÇÕES E O CLIENTE VERIFICA AS
+		// INSTITUIÇÕES CADASTRADAS E PODERÁ SABER QUAL INSTITUIÇÃO SERÁ EXCLUIDA.
+
 
 		System.out.println("Exluir insituição?");
 		System.out.println("Digite o nome fantasia da instituição:");
@@ -156,7 +167,8 @@ public class InstituicaoController {
 					InstituicaoMenu();
 					break;
 				default:
-						System.out.println("Opção inválida");
+						System.err.print("Opção inválida");
+					System.out.println("");
 						excluirInstituicao();
 					}
 			}
@@ -192,7 +204,8 @@ public class InstituicaoController {
 			System.out.println("Nome: " + instituicao.getNomeFantasia());
 			InstituicaoMenu();
 		} else {
-			System.out.println("Não existe dados para essa instituição ");
+			System.err.print("Não existe dados para essa instituição ");
+			System.out.println("");
 			pesquisarInstituicao();
 		}
 		InstituicaoMenu();
@@ -205,8 +218,10 @@ public class InstituicaoController {
 
 		if (instituicao.getNomeFantasia() != null) {
 			System.out.println(instituicao.getNomeFantasia());
+			
 		} else {
-			System.out.println("Erro.");
+			System.err.print("Erro.");
+			System.out.println("");
 			listarInstituicao();
 		}
 		InstituicaoMenu();
