@@ -1,21 +1,52 @@
 package br.edu.fapi.sga.funcionario.view.acoes;
 
 import java.util.Scanner;
-
+import br.edu.fapi.sga.funcionario.controller.FuncionarioController;
 import br.edu.fapi.sga.model.funcionario.Funcionario;
 
 public class ExcluirFuncionario {
 
-	public void excluirFuncionario() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Excluir funcionario");
-		System.out.println("Digite o nome do funcionario: ");
-		String Nome = scanner.nextLine();
+	public void excluirFuncionario(FuncionarioController funcionarioController, Scanner scanner,
+			Funcionario funcionario) {
 
-		if (Nome == Funcionario.getNomeCompleto()) {
-			System.out.println("Funcionario excluido");
-		} else {
-			System.out.println("Nao existe funcionarios no sistema com esse nome. ");
+		String opcao;
+		int defNome = 0;
+
+		System.out.println("");
+		System.out.println("Deseja excluir um funcionário?");
+		opcao = scanner.nextLine();
+		if (opcao == "Sim") {
+			System.out.println("Excluir funcionario");
+			System.out.println("Digite o nome do funcionario: ");
+			String Nome = scanner.nextLine();
+			if (Nome != funcionario.getNomeCompleto()) {
+				System.out.println("Nome não existe. Digite Novamente");
+			}else {
+				defNome = 1;
+			}
+			while(defNome == 0) {
+				if (Nome == funcionario.getNomeCompleto()){
+                    funcionario.setNomeCompleto(Nome);
+
+                    funcionarioController.excluirFuncionario(funcionario);
+
+                    System.out.println("");
+                    System.out.println("---------------------------");
+                    System.out.println("FUNCIONÁRIO EXCLUIDO COM SUCESSO.");
+                    System.out.println("---------------------------");
+                    System.out.println("");
+                }else{
+                    System.out.println("");
+                    System.out.println("Funcionário não encontrado");
+                    System.out.println("");
+                }       
+			}
 		}
+
+	}
+
+	public void excluirFuncionario() {
+		// TODO Auto-generated method stub
+		
 	}
 }

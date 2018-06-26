@@ -1,23 +1,35 @@
 package br.edu.fapi.sga.funcionario.view.acoes;
 
-import java.util.Scanner;
-
 import br.edu.fapi.sga.model.funcionario.Funcionario;
+import java.util.ArrayList;
+import java.util.Scanner;
+import br.edu.fapi.sga.funcionario.controller.FuncionarioController;
 
 public class PesquisarFuncionario {
 
-	public void pesquisarFuncionario() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Pesquisar funcionario");
-		System.out.println("Digite o nome do funcionario: ");
-		String Nome = scanner.nextLine();
-		System.out.println("Digite o CPF do funcionario: ");
-		String CPF = scanner.nextLine();
-		if (Nome == Funcionario.getNomeCompleto() && CPF == Funcionario.getCpf()) {
-			System.out.println("Nome: " + Funcionario.getNomeCompleto());
-			System.out.println("CPF: " + Funcionario.getCpf());
-		} else {
-			System.out.println("Nao existe dados para esse funcionario ");
+	public void pesquisarFuncionario(FuncionarioController funcionarioController, Scanner scanner,
+		ArrayList<Funcionario> arrFuncionario) {
+
+		Funcionario funcionario = new Funcionario();
+		
+		String Nome;
+		
+		for (int i = 0; i < arrFuncionario.size(); i++) {
+			System.out.println("Digite o nome completo: ");
+			Nome = scanner.nextLine();
+			if (arrFuncionario.get(i).getNomeCompleto() == funcionario.getNomeCompleto()) {
+				System.out.println("----------------");
+				System.out.println("FUNCIONÁRIOS");
+				System.out.println("----------------");
+				System.out.print(arrFuncionario.get(i).getNomeCompleto());
+			} else {
+				System.out.println("");
+				System.out.println("Não há funcionários cadastrados.");
+				System.out.println("");
+			}
+		
+
 		}
+
 	}
 }

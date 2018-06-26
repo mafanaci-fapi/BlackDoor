@@ -27,19 +27,19 @@ public class ManterFuncionario {
 
 			if (opcao == 1) {
 				CadastrarFuncionario funcionario = new CadastrarFuncionario();
-				funcionario.cadastrarFuncionario();
+				funcionario.cadastrarFuncionario(null, scanner, null);
 			}
 			if (opcao == 2) {
-				AtualizarFuncionario func = new AtualizarFuncionario();
-				func.atualizarFuncionario();
+				AtualizarFuncionario funcionario = new AtualizarFuncionario();
+				funcionario.atualizarFuncionario(null, scanner, null);
 			}
 			if (opcao == 3) {
 				ListarFuncionario funcio = new ListarFuncionario();
-				funcio.listarFuncionario();
+				funcio.listarFuncionario(null, null, null);
 			}
 			if (opcao == 4) {
 				PesquisarFuncionario pesquisar = new PesquisarFuncionario();
-				pesquisar.pesquisarFuncionario();
+				pesquisar.pesquisarFuncionario(null, scanner, null);
 			}
 			if (opcao == 5) {
 				ExcluirFuncionario excluir = new ExcluirFuncionario();

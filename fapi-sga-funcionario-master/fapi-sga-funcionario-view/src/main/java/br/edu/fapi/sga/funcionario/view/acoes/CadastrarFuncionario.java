@@ -1,42 +1,61 @@
 package br.edu.fapi.sga.funcionario.view.acoes;
 
+import java.util.ArrayList;
 import java.util.Scanner;
-
+import br.edu.fapi.sga.funcionario.controller.FuncionarioController;
 import br.edu.fapi.sga.model.funcionario.Funcionario;
 
 public class CadastrarFuncionario {
 
-	Scanner scanner = new Scanner(System.in);
-	private String nomeCompleto;
-	private String cpf;
-	private String rg;
-	private String telefone;
-	private String email;
-	private String endereco;
-	private boolean status;
-	private int idFuncionario;
-
-	public void cadastrarFuncionario() {
+	public void cadastrarFuncionario(FuncionarioController funcionarioController, Scanner scanner, 
+		ArrayList<Funcionario> arrFuncionario) {
+		
+		Funcionario funcionario = new Funcionario();
+		String nomeCompleto, cpf, rg, telefone, email, endereco;
+		Boolean status;
+		Integer id;
+		
+		//ArrayList<Funcionario> func = new ArrayList<Funcionario>();
+		
 		System.out.println("Cadastrar Funcionario");
 		System.out.println("Informe o nome completo: ");
-		Funcionario.setNomeCompleto(scanner.nextLine());
+		nomeCompleto = scanner.nextLine();
+		funcionario.setNomeCompleto(nomeCompleto);
+		
 		System.out.println("Informe o CPF: ");
-		Funcionario.setCpf(scanner.nextLine());
+		cpf = scanner.nextLine();
+		funcionario.setCpf(cpf);
+		
 		System.out.println("Informe o RG: ");
-		Funcionario.setRg(scanner.nextLine());
+		rg = scanner.nextLine();
+		funcionario.setRg(rg);
+		
 		System.out.println("Informe o telefone: ");
-		Funcionario.setTelefone(scanner.nextLine());
+		telefone = scanner.nextLine();
+		funcionario.setTelefone(telefone);
+		
 		System.out.println("Informe o e-mail: ");
-		Funcionario.setEmail(scanner.nextLine());
+		email = scanner.nextLine();
+		funcionario.setEmail(email);
+		
 		System.out.println("Informe o endereco: ");
-		Funcionario.setEndereco(scanner.nextLine());
+		endereco = scanner.nextLine();
+		funcionario.setEndereco(endereco);
+		
 		System.out.println("Informe o status: ");
-		Funcionario.setStatus(convertToBoolean(scanner.nextLine()));
+		status = convertToBoolean(scanner.nextLine());
+		funcionario.setStatus(status);
+		
 		System.out.println("Informe o ID do funcionario: ");
-		Funcionario.setIdFuncionario(scanner.nextInt());
-		System.out.println("Cadastro realizado com Sucesso!");
+		id = scanner.nextInt();
+		funcionario.setIdFuncionario(id);
+		
+		
+		if ((funcionario.getNomeCompleto() != "") && (funcionario.getCpf() != "")){
+			arrFuncionario.add(funcionario);
+			System.out.println("Cadastro realizado com Sucesso!");
+		}
 	}
-
 	private boolean convertToBoolean(String valor) {
 		if ("ativo".equalsIgnoreCase(valor)) {
 			return true;
