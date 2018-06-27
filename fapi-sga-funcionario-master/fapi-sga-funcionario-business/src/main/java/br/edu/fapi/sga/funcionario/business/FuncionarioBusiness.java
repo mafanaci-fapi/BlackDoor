@@ -9,7 +9,7 @@ public interface FuncionarioBusiness {
 
     Funcionario pesquisarFuncionario(Funcionario funcionario);
 
-    List<Funcionario> pesquisarListaFuncionarios(Funcionario funcionarioo);
+    List<Funcionario> pesquisarListaFuncionarios(Funcionario funcionario);
 
     int atualizarFuncionario(Funcionario funcionario);
 

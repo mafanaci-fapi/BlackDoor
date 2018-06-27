@@ -43,7 +43,7 @@ public class ManterFuncionario {
 			}
 			if (opcao == 5) {
 				ExcluirFuncionario excluir = new ExcluirFuncionario();
-				excluir.excluirFuncionario();
+				excluir.excluirFuncionario(null, scanner, null);
 			}
 		}
 

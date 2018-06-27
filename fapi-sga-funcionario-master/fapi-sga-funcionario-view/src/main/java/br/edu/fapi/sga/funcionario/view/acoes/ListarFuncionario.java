@@ -7,11 +7,15 @@ import br.edu.fapi.sga.funcionario.controller.FuncionarioController;
 
 public class ListarFuncionario {
 
+	Funcionario funcionario = new Funcionario();
+
 	public void listarFuncionario(FuncionarioController funcionarioController, Scanner scanner,
-		ArrayList<Funcionario> arrFuncionario) {
+			ArrayList<Funcionario> arrFuncionario) {
 
 		for (int i = 0; i < arrFuncionario.size(); i++) {
+
 			if (arrFuncionario.get(i).getNomeCompleto() != "") {
+				funcionarioController.pesquisarListaFuncionario(funcionario);
 				System.out.println("----------------");
 				System.out.println("LISTA DE FUNCIONÁRIOS.");
 				System.out.println("----------------");
@@ -22,7 +26,6 @@ public class ListarFuncionario {
 				System.out.println("Não há funcionários cadastrados.");
 				System.out.println("");
 			}
-		
 
 		}
 

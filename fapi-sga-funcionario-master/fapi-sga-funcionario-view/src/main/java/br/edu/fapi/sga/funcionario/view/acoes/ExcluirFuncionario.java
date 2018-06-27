@@ -12,41 +12,31 @@ public class ExcluirFuncionario {
 		String opcao;
 		int defNome = 0;
 
-		System.out.println("");
-		System.out.println("Deseja excluir um funcionário?");
-		opcao = scanner.nextLine();
-		if (opcao == "Sim") {
-			System.out.println("Excluir funcionario");
-			System.out.println("Digite o nome do funcionario: ");
-			String Nome = scanner.nextLine();
-			if (Nome != funcionario.getNomeCompleto()) {
-				System.out.println("Nome não existe. Digite Novamente");
-			}else {
-				defNome = 1;
-			}
-			while(defNome == 0) {
-				if (Nome == funcionario.getNomeCompleto()){
-                    funcionario.setNomeCompleto(Nome);
+		System.out.println("Excluir funcionario");
+		System.out.println("Digite o nome do funcionario: ");
+		String Nome = scanner.nextLine();
+		if (Nome != funcionario.getNomeCompleto()) {
+			System.out.println("Nome não existe. Digite Novamente");
+		} else {
+			defNome = 1;
+		}
+		while (defNome == 0) {
+			if (Nome == funcionario.getNomeCompleto()) {
+				funcionario.setNomeCompleto(Nome);
 
-                    funcionarioController.excluirFuncionario(funcionario);
+				funcionarioController.excluirFuncionario(funcionario);
 
-                    System.out.println("");
-                    System.out.println("---------------------------");
-                    System.out.println("FUNCIONÁRIO EXCLUIDO COM SUCESSO.");
-                    System.out.println("---------------------------");
-                    System.out.println("");
-                }else{
-                    System.out.println("");
-                    System.out.println("Funcionário não encontrado");
-                    System.out.println("");
-                }       
+				System.out.println("");
+				System.out.println("---------------------------");
+				System.out.println("FUNCIONÁRIO EXCLUIDO COM SUCESSO.");
+				System.out.println("---------------------------");
+				System.out.println("");
+			} else {
+				System.out.println("");
+				System.out.println("Funcionário não encontrado");
+				System.out.println("");
 			}
 		}
-
 	}
 
-	public void excluirFuncionario() {
-		// TODO Auto-generated method stub
-		
-	}
 }

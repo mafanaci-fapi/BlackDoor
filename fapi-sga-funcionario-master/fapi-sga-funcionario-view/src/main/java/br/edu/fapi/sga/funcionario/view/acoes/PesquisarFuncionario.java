@@ -17,6 +17,9 @@ public class PesquisarFuncionario {
 		for (int i = 0; i < arrFuncionario.size(); i++) {
 			System.out.println("Digite o nome completo: ");
 			Nome = scanner.nextLine();
+			
+			funcionarioController.pesquisarFuncionario(funcionario);
+			
 			if (arrFuncionario.get(i).getNomeCompleto() == funcionario.getNomeCompleto()) {
 				System.out.println("----------------");
 				System.out.println("FUNCIONÁRIOS");
