@@ -1,5 +1,6 @@
 package br.edu.fapi.sga.funcionario.view.acoes;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import br.edu.fapi.sga.funcionario.controller.FuncionarioController;
 import br.edu.fapi.sga.model.funcionario.Funcionario;
@@ -7,10 +8,12 @@ import br.edu.fapi.sga.model.funcionario.Funcionario;
 public class ExcluirFuncionario {
 
 	public void excluirFuncionario(FuncionarioController funcionarioController, Scanner scanner,
-			Funcionario funcionario) {
+			ArrayList<Funcionario> arrFuncionario) {
 
 		String opcao;
 		int defNome = 0;
+		
+		Funcionario funcionario = new Funcionario();
 
 		System.out.println("Excluir funcionario");
 		System.out.println("Digite o nome do funcionario: ");
@@ -22,7 +25,7 @@ public class ExcluirFuncionario {
 		}
 		while (defNome == 0) {
 			if (Nome == funcionario.getNomeCompleto()) {
-				funcionario.setNomeCompleto(Nome);
+				arrFuncionario.remove(funcionario);
 
 				funcionarioController.excluirFuncionario(funcionario);
 

@@ -44,7 +44,7 @@ public class Menu {
                     break;
                 case 2:
                     ExcluirFuncionario excluir = new ExcluirFuncionario();
-                    excluir.excluirFuncionario(funcionarioController, scanner, funcionario);
+                    excluir.excluirFuncionario(funcionarioController, scanner, arrFuncionario);
                     break;
                 case 3:
                     AtualizarFuncionario atualiza = new AtualizarFuncionario();
