@@ -12,34 +12,29 @@ public class ExcluirFuncionario {
 
 		String opcao;
 		int defNome = 0;
-		
+
 		Funcionario funcionario = new Funcionario();
 
 		System.out.println("Excluir funcionario");
 		System.out.println("Digite o nome do funcionario: ");
 		String Nome = scanner.nextLine();
-		if (Nome != funcionario.getNomeCompleto()) {
+
+		while (Nome != funcionario.getNomeCompleto()) {
+
 			System.out.println("Nome não existe. Digite Novamente");
-		} else {
+			String Nome1 = scanner.nextLine();
 			defNome = 1;
-		}
-		while (defNome == 0) {
-			if (Nome == funcionario.getNomeCompleto()) {
-				arrFuncionario.remove(funcionario);
 
-				funcionarioController.excluirFuncionario(funcionario);
+		} if (Nome == funcionario.getNomeCompleto()) {
+			arrFuncionario.remove(funcionario);
 
-				System.out.println("");
-				System.out.println("---------------------------");
-				System.out.println("FUNCIONÁRIO EXCLUIDO COM SUCESSO.");
-				System.out.println("---------------------------");
-				System.out.println("");
-			} else {
-				System.out.println("");
-				System.out.println("Funcionário não encontrado");
-				System.out.println("");
-			}
+			funcionarioController.excluirFuncionario(funcionario);
+
+			System.out.println("");
+			System.out.println("---------------------------");
+			System.out.println("FUNCIONÁRIO EXCLUIDO COM SUCESSO.");
+			System.out.println("---------------------------");
+			System.out.println("");
 		}
 	}
-
 }
