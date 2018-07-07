@@ -13,12 +13,17 @@ public class DummyInstituicaoDAO implements InstituicaoDAO {
 
 	@Override
 	public int create(Instituicao instituicao) {
-		return 0;
+		System.out.println("Data Layer -> Instituição cadastrada com sucesso");
+		return 1;
 	}
 
 	@Override
 	public Instituicao retrieve(Instituicao instituicao) {
-		return null;
+
+		System.out.println("Data Layer -> Funcion�rio pesquisado com sucesso");
+		Instituicao instituicaoResultado = new Instituicao();
+		instituicaoResultado.setCnpj("99999999");
+		return instituicaoResultado;
 	}
 
 	@Override
