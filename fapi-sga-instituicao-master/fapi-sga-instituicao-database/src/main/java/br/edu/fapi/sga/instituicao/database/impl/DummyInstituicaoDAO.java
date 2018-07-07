@@ -27,6 +27,16 @@ public class DummyInstituicaoDAO implements InstituicaoDAO {
 
 	@Override
 	public List<Instituicao> retrieveList(Instituicao instituicao) {
+
+		System.out.println("Data Layer -> Instituicoes pesquisadas com sucesso");
+		Instituicao instituicao1 = new Instituicao();
+		instituicao1.setCnpj("Teste1");
+		Instituicao instituicao2 = new Instituicao();
+		instituicao2.setCnpj("Teste2");
+
+		ArrayList<Instituicao>listaInstituicao = new ArrayList<>();
+		listaInstituicao.add(instituicaoResultado);
+
 		return null;
 	}
 
@@ -45,24 +55,4 @@ public class DummyInstituicaoDAO implements InstituicaoDAO {
 		return 1;
 	}
 
-
-	/*
-
-
-	@Override
-	public List<Funcionario> retrieveList(Funcionario funcionario) {
-		System.out.println("Data Layer -> Funcion�rios pesquisados com sucesso");
-
-        Funcionario funcionarioResultado1 = new Funcionario();
-        funcionarioResultado1.setCpf("Teste Conteudo 1");
-
-        Funcionario funcionarioResultado2 = new Funcionario();
-        funcionarioResultado2.setCpf("Teste Conteudo 2");
-
-        ArrayList<Funcionario> listaFuncionario = new ArrayList<>();
-        listaFuncionario.add(funcionarioResultado1);
-
-
-*/
-	
 }
