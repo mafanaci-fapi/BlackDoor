@@ -9,7 +9,7 @@ import java.util.List;
 public class DummyInstituicaoDAO implements InstituicaoDAO {
 
 
-
+	Instituicao instituicaoResultado = new Instituicao();
 
 	@Override
 	public int create(Instituicao instituicao) {
@@ -20,8 +20,7 @@ public class DummyInstituicaoDAO implements InstituicaoDAO {
 	@Override
 	public Instituicao retrieve(Instituicao instituicao) {
 
-		System.out.println("Data Layer -> Funcion�rio pesquisado com sucesso");
-		Instituicao instituicaoResultado = new Instituicao();
+		System.out.println("Data Layer -> Instituicao pesquisada com sucesso");
 		instituicaoResultado.setCnpj("99999999");
 		return instituicaoResultado;
 	}
@@ -33,31 +32,22 @@ public class DummyInstituicaoDAO implements InstituicaoDAO {
 
 	@Override
 	public int update(Instituicao instituicao) {
-		return 0;
+
+		System.out.println("Data Layer -> Instituicao atualizada com sucesso");
+		return 1;
 	}
+
 
 	@Override
 	public int delete(Instituicao instituicao) {
-		return 0;
+
+		System.out.println("Data Layer -> Instituicao apagada com sucesso");
+		return 1;
 	}
 
 
 	/*
 
-
-	@Override
-	public int create(Funcionario funcionario) {
-		System.out.println("Data Layer -> Funcion�rio cadastrado com sucesso");
-        return 1;
-	}
-
-	@Override
-	public Funcionario retrieve(Funcionario funcionario) {
-		System.out.println("Data Layer -> Funcion�rio pesquisado com sucesso");
-        Funcionario funcionarioResultado = new Funcionario();
-        funcionarioResultado.setCpf("Teste Conteudo");
-        return funcionarioResultado;
-	}
 
 	@Override
 	public List<Funcionario> retrieveList(Funcionario funcionario) {
@@ -71,23 +61,7 @@ public class DummyInstituicaoDAO implements InstituicaoDAO {
 
         ArrayList<Funcionario> listaFuncionario = new ArrayList<>();
         listaFuncionario.add(funcionarioResultado1);
-        listaFuncionario.add(funcionarioResultado2);
 
-        return listaFuncionario;
-    }
-
-
-	@Override
-	public int update(Funcionario funcionario) {
-		System.out.println("Data Layer -> Funcion�rio atualizado com sucesso");
-        return 1;
-	}
-
-	@Override
-	public int delete(Funcionario funcionario) {
-		System.out.println("Data Layer -> Funcion�rio apagado com sucesso");
-        return 1;
-	}
 
 */
 	
