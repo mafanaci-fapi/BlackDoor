@@ -1,14 +1,16 @@
 package br.edu.fapi.sga.instituicao.view.controller;
 
+import java.awt.*;
 import java.util.Scanner;
 
 import br.edu.fapi.sga.model.instituicao.Instituicao;
 
-public class InstituicaoController {
+public class  InstituicaoController {
 
 	Scanner scanner = new Scanner(System.in);
+	InstituicaoController instituicaoController = new InstituicaoController();
 
-	public InstituicaoController InstituicaoMenu() {
+	public int menuInicial(){
 
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Instituição");
@@ -20,6 +22,14 @@ public class InstituicaoController {
 		System.out.println("Digite 5 para excluir uma instituição");
 		System.out.println("Opcao:");
 		int opcao = scanner.nextInt();
+
+		return opcao;
+	}
+
+
+	public InstituicaoController InstituicaoMenu() {
+
+		int opcao = instituicaoController.menuInicial();
 
 		switch (opcao) {
 			case 1:
@@ -50,34 +60,6 @@ public class InstituicaoController {
 				return null;
 		}
 
-//		if (opcao == 1) {
-//			cadastrarInstituicao();
-//		} else {
-//			if (opcao == 2) {
-//				atualizarInstituicao();
-//
-//			} else {
-//				if (opcao == 3) {
-//					listarInstituicao();
-//
-//				} else {
-//					if (opcao == 4) {
-//						pesquisarInstituicao();
-//
-//					} else {
-//						if (opcao == 5) {
-//							excluirInstituicao();
-//
-//						} else {
-//							System.out.println("Opção inválida");
-//							InstituicaoMenu();
-//						}
-//					}
-//				}
-//			}
-//		}
-//		return null;
-//	}
 
 	public String cadastrarInstituicao() {
 
